@@ -69,6 +69,7 @@ nav.menu ul {
     align-items: center;
     padding: 20px 0;
     gap: 10px;
+    flex-wrap: wrap;
 }
 
 .logo svg {
@@ -159,6 +160,9 @@ nav.menu ul {
     border-radius: 10px;
     text-align: left!important;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .plans-item p {
@@ -203,11 +207,18 @@ nav.menu ul {
     margin-bottom: 10px;
 }
 
+.plans-item-footer {
+    height: 200px;
+}
+
 /* Estilos de la sección footer */
 footer {
     background-color: #000;
     padding: 20px 20px;
     color: #fff;
+}
+
+.n1 {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
 }
@@ -229,10 +240,76 @@ footer .social-networks ul li {
 }
 
 footer .legal {
-    grid-column-start: 1;
-    grid-column-end: 6;
     display: flex;
     gap: 10px;
     font-size: 10px;
     margin-top: 20px;
+}
+
+/* Media queries */
+/* Responsive tablets */
+@media screen and (max-width: 992px) {
+    /** beneficios **/
+    .proceeds-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .proceeds-item {
+        flex-direction: row!important;
+        align-items: center!important;
+        gap: 10px;
+    }
+    .proceeds-item-body {
+        text-align: left;
+    }
+    .proceeds-item-body h3, .proceeds-item-body p {
+        margin: 0;
+    }
+    .proceeds-container .proceeds-item i {
+        margin-bottom: 0;
+    }
+
+    /** planes **/
+    .plans-container {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 40px;
+    }
+}
+
+/* Responsive Movil */
+@media screen and (max-width: 768px) {
+    /* Menu */
+    .menu {
+        display: none;
+    }
+    .menu-responsive {
+        display: block;
+    }
+
+    /* Beneficios */
+    .proceeds-container {
+        grid-template-columns: 1fr;
+    }
+
+    /* footer */
+    .logo {
+        grid-column-start: 1;
+        grid-column-end: 6;
+        text-align: center;
+    } 
+    .company {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    .comunity {
+        grid-column-start: 3;
+        grid-column-end: 4;
+    }
+    .networks {
+        grid-column-start: 4;
+        grid-column-end: 6;
+    }
+    .social-networks {
+        grid-column-start: 1;
+        grid-column-end: 6;
+    }
 }
